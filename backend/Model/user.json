@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "uchiha sasuke",
+        "food": "fish"
+    },
+    {
+        "id": 2,
+        "name": "naruto uzumaki",
+        "food": "ramen"
+    },
+    {
+        "id": 3,
+        "name": "tsunade senju",
+        "food": "sake"
+    }
+]
