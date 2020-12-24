@@ -1,3 +1,4 @@
+const { findByIdAndDelete } = require('../Model/plansModel');
 const planModel = require('../Model/plansModel');
 
 async function createPlan(req,res) {
@@ -52,7 +53,7 @@ async function getPlanByID(req,res) {
 async function updatePlanByID(req,res) {
   try{
     let id = req.params.id;
-    let planToBeDeleted = await planModel.findById(id);
+    let planToBeDeleted = await planModel.findById(id); 
     let objectsToBeUpdated = req.body;
     for(key in objectsToBeUpdated){
       planToBeDeleted[key] = objectsToBeUpdated[key];
@@ -70,8 +71,28 @@ async function updatePlanByID(req,res) {
     })
   }
 }
+async function deleteByID(req,res) {
+  try{
+    let id = req.params.id;
+    let objectToBeDeleted = await planModel.findByIdAndDelete(id);
+    let restPlans = await planModel.find({});
+
+    res.json({
+      "message":"successfully deleted",
+      "data":restPlans
+    })
+  }
+  catch(error){
+    res.json({
+      "message": "could not delete the desired plan",
+      "error": error
+    })
+  }
+}
+
 
 module.exports.createPlan = createPlan;
 module.exports.getAllPlans = getAllPlans;
 module.exports.getPlanByID = getPlanByID;
 module.exports.updatePlanByID = updatePlanByID;
+module.exports.deleteByID = deleteByID;
