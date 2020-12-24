@@ -7,6 +7,7 @@ const planRouter = require('./router/planRouter');
 
 
 app.use(express.json());
+
 app.use("/api/plan", planRouter);
 
 
