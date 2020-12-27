@@ -5,8 +5,10 @@ const planRouter = require('./router/planRouter');
 const userRouter = require('./router/userRouter');
 const viewRouter = require('./router/viewRouter');
 const path = require('path');
+const cors = require('cors')
 
 
+app.use(cors())
 //view engine set
 app.set("view engine", "pug");
 //view path set
