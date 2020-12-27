@@ -5,10 +5,10 @@ const planRouter = require('./router/planRouter');
 const userRouter = require('./router/userRouter');
 const viewRouter = require('./router/viewRouter');
 const path = require('path');
-const cors = require('cors')
+const cors = require('cors');
 
 
-app.use(cors())
+app.use(cors());
 //view engine set
 app.set("view engine", "pug");
 //view path set
@@ -22,4 +22,4 @@ app.use("/",viewRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
-})
+});
