@@ -36,6 +36,8 @@ let userSchema = new mongoose.Schema({
         default:"user"
     }
 });
-
+// userSchema.pre('create', () => {
+//     this.confirmPassword = undefined;
+// })
 const userModel = mongoose.model("usercollection",userSchema);
 module.exports = userModel;

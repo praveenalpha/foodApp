@@ -1,12 +1,15 @@
-
+const jwt = require("jsonwebtoken")
+const secretKey = require("../secret1");
 
 const userModel = require("../Model/userModel");
-const userRouter = require("../router/userRouter");
+
 
 async function createUser(req,res) {
     try{
         let userObj = req.body;
         let createdUser = await userModel.create(userObj);
+        let token = jwt.sign({email:userObj.email},secretKey.secretKey);
+        console.log(token);
         res.json({
             "message": "successfully created user",
             "data": createdUser
@@ -87,9 +90,36 @@ async function deleteByID(req,res) {
         })
     }
 }
+async function loginUser(req,res) {
+    try{
+        let { email, password } = req.body;
+        let userFound = await userModel.findOne({ "email":email });
+        if(userFound){
+            const token = jwt.sign( { id : userFound["_id"] } , secretKey.secretKey);
+            console.log(token);
+            res.json({
+                "message":"found",
+                token
+            })
+        }
+        else{
+            res.json({
+                "message":"wrong id or password",
+            })
+
+        }
+    }
+    catch(error){
+        res.json({
+            "message":"user login failed",
+            "error":error
+        })
+    }
+}
 
 module.exports.createUser = createUser;
 module.exports.getAllUsers = getAllUsers;
 module.exports.getUserByID = getUserByID;
 module.exports.updateUserByID = updateUserByID;
 module.exports.deleteByID = deleteByID;
+module.exports.loginUser = loginUser;
