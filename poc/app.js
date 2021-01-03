@@ -23,3 +23,8 @@ planModel.create({
 }).catch((err) => {
     console.log(err);
 })
+// let x = true;
+
+// const a = 1;
+
+// console.log(2+a);

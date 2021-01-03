@@ -34,10 +34,14 @@ let userSchema = new mongoose.Schema({
         type:String,
         enum:["admin","user","restOwner","deliveryBoy"],
         default:"user"
-    }
+    },
+    pwToken:String,
+    tokenTime:String
 });
 // userSchema.pre('create', () => {
 //     this.confirmPassword = undefined;
 // })
+userSchema.methods.createToken 
+
 const userModel = mongoose.model("usercollection",userSchema);
 module.exports = userModel;
