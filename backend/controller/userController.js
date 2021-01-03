@@ -57,6 +57,7 @@ async function updateUserByID(req,res) {
     try{
         let id = req.params.id;
         let userToBeUpdated = await userModel.findById(id);
+        // console.log(userToBeUpdated);
         let objectsToBeUpdated = req.body;
         for(key in objectsToBeUpdated){
             userToBeUpdated[key] = objectsToBeUpdated[key];

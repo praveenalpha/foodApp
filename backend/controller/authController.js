@@ -1,25 +1,21 @@
-
 const userModel = require("../Model/userModel");
 
-
-
-
-async function createToken(req,res) {
+async function token(req,res) {
     try{
-        let userEmail = req.body.email;
-        let user = await userModel.findOne({"email":userEmail}, 'name', (err,user) =>{
-            if(err){
-                return err;
-            }
-            return user;
-        });
+        let id = req.body.email;
+        let user = await userModel.findOne({"email":id}).exec();
+        console.log(user);
         if(user){
-            
+            user.createToken();
+            res.json({
+                "message":"sent token"
+            })
         }
         else{
-            console.log("no");
+            res.json({
+                "message":"email dsnt exist"
+            })
         }
-        
     }
     catch(error){
         res.json({
@@ -28,4 +24,4 @@ async function createToken(req,res) {
         })
     }
 }
-module.exports.createToken = createToken;
+module.exports.token = token;
