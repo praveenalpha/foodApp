@@ -73,7 +73,7 @@ userSchema.methods.createToken = function ()
 {
     console.log(secretKey.secretKey);
     let userToken = jwt.sign({"email":this.email}, secretKey.secretKey);
-    let tokenTime = Date.now()*1000*60+15;
+    let tokenTime = (Date.now()/(1000*60))+15;
     this.pwToken = userToken;
     this.time = tokenTime;
     this.save();
