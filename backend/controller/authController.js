@@ -35,7 +35,7 @@ async function token(req,res) {
     try{
         let id = req.body.email;
         let user = await userModel.findOne({"email":id}).exec();
-        console.log(user);
+        // console.log(user);
         if(user){
             user.createToken();
             res.json({

@@ -2,8 +2,9 @@ const mongoose = require("mongoose");
 const secretKey = require("../secret1");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
-async function mailSend() {
+async function mailSend(token) {
     try{
+        console.log(token);
         const transporter = nodemailer.createTransport({
             host: "smtp.mailtrap.io",
             port: 2525,
@@ -12,12 +13,12 @@ async function mailSend() {
             pass: "0568fbfa79e7e5"
             }
         });
-        
+        let link = `https://localhost:3000/api/user/${token}`;
         let info = await transporter.sendMail({
         from: 'pm495949@gmail.com', // sender address
         to: "bar@example.com, baz@example.com", // list of receivers
         subject: "reset password", // Subject line
-        text: "use link with in 15 minutes", // plain text body
+        text: `use link with in 15 minutes ${link}`, // plain text body
         html: "<b>Hello world</b>", // html body
         });
         
@@ -77,7 +78,7 @@ userSchema.methods.createToken = function ()
     this.pwToken = userToken;
     this.time = tokenTime;
     this.save();
-    mailSend();
+    mailSend(this.pwToken);
 }
 
 const userModel = mongoose.model("usercollection",userSchema);
