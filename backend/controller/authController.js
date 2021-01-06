@@ -1,5 +1,10 @@
 const userModel = require("../Model/userModel");
 
+async function resetPassword(req,res) {
+    let token = req.params.token;
+    let userDetail = await userModel.findOne({"pwToken":token});
+    console.log(userDetail);
+}
 async function token(req,res) {
     try{
         let id = req.body.email;
@@ -25,3 +30,4 @@ async function token(req,res) {
     }
 }
 module.exports.token = token;
+module.exports.resetPassword = resetPassword;
