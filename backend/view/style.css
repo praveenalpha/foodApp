@@ -12,6 +12,13 @@ html, body{
     font-family: 'Oswald', sans-serif;
     height: 100vh;
 }
+.header1{
+  background-color: rgb(58, 56, 56);
+  justify-content: space-evenly;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+}
 .header{
     justify-content: space-evenly;
     display: flex;
@@ -143,6 +150,15 @@ hr.new1 {
       display: flex;
       padding: 2vw;
       justify-content: space-evenly;
+  }
+  .awesome-contents i{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vh;
+    color: red;
+  }
+  .awesome-contents h1, p{
+    color: grey;
   }
   .calender{
       transition: transform 0.3s;
@@ -286,7 +302,7 @@ hr.new1 {
       margin-top: 3vw;
       margin-left: 2vw;
       margin-right: 2vw;
-      height: 25vh;
+          height: fit-content;
       width: 30vw;
       background-color: white;
       transition: transform 0.5s;
@@ -400,6 +416,10 @@ hr.new1 {
     margin-top: 10vh;
     margin-left: 9vh;
   }
+  .video img{
+    height: 100%;
+    width: 100%;
+  }
   .form-container{
     width: 45vw;
     margin-left: 7vw;
@@ -474,15 +494,15 @@ hr.new1 {
     height: 50%;
   }
   .signup-form{
+    height: 66%;
+  }
+  .signup-form-content{
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    height: 66%;
-    /* width: 60vw; */
-    /* margin: auto; */
-    margin-left: 28vw;
-    margin-top: 10vh;
-
+    box-shadow: 0 10px 22px 10px rgba(27, 38, 49, 0.1);
+    width: fit-content;
+    margin: auto;
+    margin-top: 10vh
   }
   .signup-input{
     width: 45vw;
@@ -532,4 +552,7 @@ hr.new1 {
   }
   .login-btn:hover{
     transform: scale(1.1);
+  }
+  .footer i{
+    font-size: xxx-large;
   }

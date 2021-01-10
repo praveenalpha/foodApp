@@ -1,6 +1,19 @@
-extend demo.pug
-append content
- .showcase
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='css/all.min.css')
+  link(rel='stylesheet' href='./style.css')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js' integrity='sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==' crossorigin='anonymous')
+  title demo
+.showcase
+  header.header
+    .features FEATURES
+    .details DETAILS
+    .review REVIEW
+    .plans PLANS
+    .signup SIGN UP
+  script(src='./script/header-script.js')
   .showcase-content
     h1 MEAL PLANS.
     h1
@@ -9,157 +22,164 @@ append content
     .showcase-buttons
       .btn Book Now
       .btn-fade Show Me More
- h3.awesome AWESOME FEATURES
- hr.new1
- .awesome-contents
-   .calender
-     .img
-       img(src='https://img.icons8.com/officel/16/000000/calendar-16.png')
-     h1 24/7
-     p
-       | Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. You can also choose to order more flexibly if that&apos;s your style.
-   .delivery
-     .icon
-       i
-       h1 30 MINS OR FREE
-       p
-         | You&apos;re only twenty minutes away from your delicious and super healthy meals delivered right to your home. We work with the best chefs in each town to ensure that you&apos;re 100% happy.
-   .source
-     .icon
-       i
-       h1 100% organic
-       p
-         | All our vegetables are fresh, organic and local. Animals are raised without added hormones or antibiotics. Good for your health, the environment, and it also tastes better!
- .steps-to-follow-content
-   .follow-heading
-     h3 STEPS TO FOLLOW
-   hr.new1
-   .follow-content
-     .follow-img
-       img(src='./image2.jpg' alt='img')
-     .follow-para
-       .num
-         .one
-           .num-one
-             | 1
-           p Choose the subscription plan that best fits your needs and sign up today.
-         .one.mar
-           .num-one
-             | 2
-           p
-             | Order your delicious meal using our mobile app or website. Or you can even call us!
-         .one
-           .num-one
-             | 3
-           p Enjoy your meal after less than 20 minutes. See you the next time!
- .review-page
-   h3 REVIEWS
-   hr.new1
-   .people-review-container
-     .people-review
-       h4 NARUTO UZUMAKI
-       p
-         | Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure odio, quod nisi facilis commodi ut sunt ipsam, magnam eius repellat perferendis porro, iste voluptas!
-       i
-     .people-review
-       h4 NARUTO UZUMAKI
-       p
-         | Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure odio, quod nisi facilis commodi ut sunt ipsam, magnam eius repellat perferendis porro, iste voluptas!
-       i
-     .people-review
-       h4 NARUTO UZUMAKI
-       p
-         | Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure odio, quod nisi facilis commodi ut sunt ipsam, magnam eius repellat perferendis porro, iste voluptas!
-       i
- .start-eating-healthy
-   h3 START EATING HEALTHY TODAY
-   hr.new1
-   .one-three-container
-     .one-three
-       h4.premium-block1 PREMIUM
-       p.premium-block1
-         span.sp $399
-         | /month
-       p.premium-block1 That&apos;s only 13.30$ per meal
-       hr.new
-       .tick-para.premium-block2.margin-top
-         i
-         p 1 meal every day
-       .tick-para.premium-block2
-         i
-         p Order 24/7
-       .tick-para.premium-block2
-         i
-         p Access to newest creation
-       #free-delivery.tick-para.premium-block2
-         i
-         p Free delivery
-       hr.new
-       .up
-         p I AM HUNGRY
-     .one-three.middle
-       h4.premium-block1 PREMIUM
-       p.premium-block1
-         span.sp $399
-         | /month
-       p.premium-block1 That&apos;s only 13.30$ per meal
-       hr.new
-       .tick-para.premium-block2.margin-top
-         i
-         p 1 meal every day
-       .tick-para.premium-block2
-         i
-         p Order 24/7
-       .tick-para.premium-block2
-         i
-         p Access to newest creation
-       #free-delivery.tick-para.premium-block2
-         i
-         p Free delivery
-       hr.new
-       .up
-         p I AM HUNGRY
-     .one-three
-       h4.premium-block1 PREMIUM
-       p.premium-block1
-         span.sp $399
-         | /month
-       p.premium-block1 That&apos;s only 13.30$ per meal
-       hr.new
-       .tick-para.premium-block2.margin-top
-         i
-         p 1 meal every day
-       .tick-para.premium-block2
-         i
-         p Order 24/7
-       .tick-para.premium-block2
-         i
-         p Access to newest creation
-       #free-delivery.tick-para.premium-block2
-         i
-         p Free delivery
-       hr.new
-       .up
-         p I AM HUNGRY
- .contact-us
-   .contact-us-head
-     h3 CONTACT US
-   hr.new1
-   .contact-us-page
-     .video video
-     .form-container
-       .section
-         label(for='') Name
-         input(type='text' placeholder='Name')
-       .section
-         label(for='') Email
-         input(type='text' placeholder='Email')
-       .section
-         label(for='') How did you find us?
-         input(type='text' placeholder='Friend')
-       .section
-         label(for='') Drop a line
-         input(type='text' placeholder='message')
-       button.submit-btn Submit
-append script
- 
+h3.awesome AWESOME FEATURES
+hr.new1
+.awesome-contents
+  .calender
+    i.fas.fa-calendar-alt.fa-2x
+    h1 24/7
+    p
+      | Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. You can also choose to order more flexibly if that&apos;s your style.
+  .delivery
+    .icon
+      i.fas.fa-truck.fa-2x
+      h1 30 MINS OR FREE
+      p
+        | You&apos;re only twenty minutes away from your delicious and super healthy meals delivered right to your home. We work with the best chefs in each town to ensure that you&apos;re 100% happy.
+  .source
+    .icon
+      i.fas.fa-carrot.fa-2x
+      h1 100% organic
+      p
+        | All our vegetables are fresh, organic and local. Animals are raised without added hormones or antibiotics. Good for your health, the environment, and it also tastes better!
+.steps-to-follow-content
+  .follow-heading
+    h3 STEPS TO FOLLOW
+  hr.new1
+  .follow-content
+    .follow-img
+      img(src='./image2.jpg' alt='img')
+    .follow-para
+      .num
+        .one
+          .num-one 1
+          p Choose the subscription plan that best fits your needs and sign up today.
+        .one.mar
+          .num-one 2
+          p
+            | Order your delicious meal using our mobile app or website. Or you can even call us!
+        .one
+          .num-one 3
+          p Enjoy your meal after less than 20 minutes. See you the next time!
+.review-page
+  h3 REVIEWS
+  hr.new1
+  .people-review-container
+    .people-review
+      h4 NARUTO UZUMAKI
+      p
+        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure odio, quod nisi facilis commodi ut sunt ipsam, magnam eius repellat perferendis porro, iste voluptas!
+      i
+    .people-review
+      h4 NARUTO UZUMAKI
+      p
+        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure odio, quod nisi facilis commodi ut sunt ipsam, magnam eius repellat perferendis porro, iste voluptas!
+      i
+    .people-review
+      h4 NARUTO UZUMAKI
+      p
+        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure odio, quod nisi facilis commodi ut sunt ipsam, magnam eius repellat perferendis porro, iste voluptas!
+      i
+.start-eating-healthy
+  h3 START EATING HEALTHY TODAY
+  hr.new1
+  .one-three-container
+    .one-three
+      h4.premium-block1 PREMIUM
+      p.premium-block1
+        span.sp $399
+        | /month
+      p.premium-block1 That&apos;s only 13.30$ per meal
+      hr.new
+      .tick-para.premium-block2.margin-top
+        i
+        p 1 meal every day
+      .tick-para.premium-block2
+        i
+        p Order 24/7
+      .tick-para.premium-block2
+        i
+        p Access to newest creation
+      #free-delivery.tick-para.premium-block2
+        i
+        p Free delivery
+      hr.new
+      .up
+        p I AM HUNGRY
+    .one-three.middle
+      h4.premium-block1 PREMIUM
+      p.premium-block1
+        span.sp $399
+        | /month
+      p.premium-block1 That&apos;s only 13.30$ per meal
+      hr.new
+      .tick-para.premium-block2.margin-top
+        i
+        p 1 meal every day
+      .tick-para.premium-block2
+        i
+        p Order 24/7
+      .tick-para.premium-block2
+        i
+        p Access to newest creation
+      #free-delivery.tick-para.premium-block2
+        i
+        p Free delivery
+      hr.new
+      .up
+        p I AM HUNGRY
+    .one-three
+      h4.premium-block1 PREMIUM
+      p.premium-block1
+        span.sp $399
+        | /month
+      p.premium-block1 That&apos;s only 13.30$ per meal
+      hr.new
+      .tick-para.premium-block2.margin-top
+        i
+        p 1 meal every day
+      .tick-para.premium-block2
+        i
+        p Order 24/7
+      .tick-para.premium-block2
+        i
+        p Access to newest creation
+      #free-delivery.tick-para.premium-block2
+        i
+        p Free delivery
+      hr.new
+      .up
+        p I AM HUNGRY
+.contact-us
+  .contact-us-head
+    h3 CONTACT US
+  hr.new1
+  .contact-us-page
+    .video
+      img(src='/foodApp/backend/view/tenor.gif' alt='' srcset='')
+    .form-container
+      .section
+        label(for='') Name
+        input(type='text' placeholder='Name')
+      .section
+        label(for='') Email
+        input(type='text' placeholder='Email')
+      .section
+        label(for='') How did you find us?
+        input(type='text' placeholder='Friend')
+      .section
+        label(for='') Drop a line
+        input(type='text' placeholder='message')
+      button.submit-btn Submit
+.footer
+  .upper-footer
+    .pages
+      .about-us about us
+      .ios-app ios APP
+      .android-app android app
+    .links
+      i.fab.fa-facebook.fa-5x
+      i.fab.fa-instagram.fa-2x
+      i.fab.fa-twitter-square.fa-2x
+      i.fab.fa-snapchat-square
+  .lower-footer Copyright &copy; 2019 EVERYONE. All rights reserved.
