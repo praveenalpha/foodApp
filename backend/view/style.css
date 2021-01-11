@@ -493,8 +493,19 @@ hr.new1 {
     align-items: center;
     height: 50%;
   }
+  .profile{
+    height: 45vh;
+    width: 25vw;
+    margin: auto;
+  }
+  .profile img{
+    height: 100%;
+    width: 100%;
+  }
   .signup-form{
+    display: flex;
     height: 66%;
+    margin-bottom: 10vh;
   }
   .signup-form-content{
     display: flex;

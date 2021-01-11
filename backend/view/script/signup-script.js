@@ -3,6 +3,7 @@ let name = document.querySelector("#name");
 let email = document.querySelector("#email");
 let password = document.querySelector("#password");
 let confirmPwd = document.querySelector("#cnfrmpwd");
+let profileInputBtn = document.querySelector(".profile-input-btn");
 
 submit.addEventListener("click", async function (e){
     try{
@@ -23,5 +24,16 @@ submit.addEventListener("click", async function (e){
     }
     catch(error){
         console.log(error);
+    }
+})
+
+profileInputBtn.addEventListener("change", async function (e){
+    try{
+        e.preventDefault();
+        let file = profileInputBtn.files;
+        console.log(file);
+    }
+    catch(error){
+
     }
 })
