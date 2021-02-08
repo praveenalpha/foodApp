@@ -1,1 +1,2 @@
 # foodApp
+## used MVC architecture
