@@ -1,2 +1,2 @@
-<div style="align:center"> foodApp</div>
+<div align="center"> foodApp</div>
 ## used MVC architecture
