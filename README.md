@@ -1,2 +1,4 @@
-<div align="center"> foodApp</div>
-## used MVC architecture
+<div align="center">foodApp</div>
+<ul>
+  <li>used MVC architecture</li>
+  </ul>
