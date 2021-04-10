@@ -8,5 +8,6 @@
   <br>
   <li><h2> JWT(Jason Web Token) was used for authentication and authoization.</h2></li>
   <br>
-  
+  <li><h2> Nodemailer was used to send emails</h2></li>
+  <br>
   </ol>
