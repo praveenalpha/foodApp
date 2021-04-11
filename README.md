@@ -10,4 +10,6 @@
   <br>
   <li><h2> Nodemailer was used to send emails</h2></li>
   <br>
+  <li><h2> Used MongoDB for backend</h2></li>
+  <br>
   </ol>
